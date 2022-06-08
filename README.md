@@ -35,3 +35,12 @@ Adding the data to the dvc
 ```bash
 dvc add data_given\WineQT.csv
 ```
+
+Creating the first commit
+
+```bash
+git add .
+```
+```bash
+git commit -m "First commit"
+```
