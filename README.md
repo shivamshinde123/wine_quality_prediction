@@ -44,3 +44,20 @@ git add .
 ```bash
 git commit -m "First commit"
 ```
+Adding a remote origin for git
+
+```bash
+git remote add origin github_link_here
+```
+
+Switching the branch to main
+
+```bash
+git branch -M main
+```
+
+Pushing the changes to the git
+
+```bash
+git push origin main
+```
