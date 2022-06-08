@@ -19,7 +19,7 @@ def get_data(config_path):
     df = pd.read_csv(data_path)
     return df
 
-
+## code starting point
 if __name__ == '__main__':
     arg = argparse.ArgumentParser()
     arg.add_argument("--config", default="parameters.yaml")
