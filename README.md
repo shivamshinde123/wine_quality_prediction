@@ -61,3 +61,21 @@ Pushing the changes to the git
 ```bash
 git push origin main
 ```
+
+Use following command to run the stages in dvc.yaml file
+
+```bash
+dvc repro
+```
+
+After the training and evaluation step, change the values of alpha and l1_ratio and run the stages from dvc.yaml file. dvc will remember all the
+changes made and it will show those using following commands.
+
+Checking current metrics
+```bash 
+dvc metrics show
+```
+Checking the changes in metrics
+```bash
+dvc metrics diff
+```
