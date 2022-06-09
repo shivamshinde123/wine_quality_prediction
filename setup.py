@@ -9,3 +9,5 @@ setup(
     packages=find_packages(),
     license="MIT License"
 )
+
+## setup.py file is used to make a project into a package
