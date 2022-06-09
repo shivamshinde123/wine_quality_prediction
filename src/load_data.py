@@ -16,6 +16,6 @@ def load_and_save(config_path):
 
 if __name__ == '__main__':
     arg = argparse.ArgumentParser()
-    arg.add_argument("--config", default="parameters.yaml")
+    arg.add_argument("--config", default="params.yaml")
     parsed_args = arg.parse_args()
     load_and_save(config_path=parsed_args.config)
