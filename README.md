@@ -79,3 +79,25 @@ Checking the changes in metrics
 ```bash
 dvc metrics diff
 ```
+tox command
+```bash
+tox
+```
+for rebuilding
+```bash 
+tox -r
+```
+pytest command
+```bash
+pytest -v
+```
+
+build you own package
+```bash
+python setup.py sdist bdist_wheel
+```
+
+setup command (local package install)
+```bash
+pip install -e .
+``` 
