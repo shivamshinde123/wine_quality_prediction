@@ -1,6 +1,6 @@
-## read params
-## process
-## return dataframe
+# read params
+# process
+# return dataframe
 
 import os
 import yaml
@@ -13,13 +13,15 @@ def read_params(config_path):
         config = yaml.safe_load(yaml_file)
     return config
 
+
 def get_data(config_path):
     config = read_params(config_path)
     data_path = config['data_source']['s3_source']
     df = pd.read_csv(data_path)
     return df
 
-## code starting point
+
+# code starting point
 if __name__ == '__main__':
     arg = argparse.ArgumentParser()
     arg.add_argument("--config", default="params.yaml")

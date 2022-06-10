@@ -1,6 +1,6 @@
-## load the train and test file
-## train the algorithm
-## save the metrics and parameters
+# load the train and test file
+# train the algorithm
+# save the metrics and parameters
 
 
 import os
@@ -16,7 +16,8 @@ import argparse
 import joblib
 import json
 
-def  train_and_evaluate(config_path):
+
+def train_and_evaluate(config_path):
     config = read_params(config_path)
     test_data_path = config["split_data"]["test_path"]
     train_data_path = config["split_data"]["train_path"]
@@ -30,7 +31,7 @@ def  train_and_evaluate(config_path):
 
     train = pd.read_csv(train_data_path, sep=",")
     test = pd.read_csv(test_data_path, sep=",")
- 
+
     train_y = train[target]
     test_y = test[target]
 
@@ -66,11 +67,11 @@ def  train_and_evaluate(config_path):
             "alpha": alpha,
             "l1_ratio": l1_ratio
         }
-        json.dump(params, f, indent=4 )
+        json.dump(params, f, indent=4)
 
     if not os.path.exists(model_dir):
         os.makedirs(model_dir)
-    
+
     model_path = os.path.join(model_dir, "model.joblib")
 
     joblib.dump(lr, model_path)
