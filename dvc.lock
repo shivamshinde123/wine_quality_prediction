@@ -4,46 +4,46 @@ stages:
     cmd: python src\\load_data.py --config=params.yaml
     deps:
     - path: data_given\\WineQT.csv
-      md5: b03c22cbdd89823c0ec32044c4826343
-      size: 78057
+      md5: ea843ab075933c4003af8d36cc8082f0
+      size: 61290
     - path: src\\get_data.py
-      md5: 9ca7ad9f39a18c129ebb7251e21e4d9e
+      md5: eac6f0de12ec48aab1be271a301f195f
       size: 652
     - path: src\\load_data.py
-      md5: ac117ab6d159928e5d344edb3dceada8
-      size: 683
+      md5: 85b5ca6a0076885ebdeb1ed12b2824f8
+      size: 685
     outs:
     - path: data\\raw\\wineQT.csv
-      md5: 928a3899cf30e454051988a983c38c6e
-      size: 72970
+      md5: 6d2ea9b697406e9c36b97e265790b672
+      size: 66886
   split_data:
     cmd: python src\\split_data.py --config=params.yaml
     deps:
     - path: data\\raw\\wineQT.csv
-      md5: 928a3899cf30e454051988a983c38c6e
-      size: 72970
+      md5: 6d2ea9b697406e9c36b97e265790b672
+      size: 66886
     - path: src\\split_data.py
-      md5: a5550897ffe5d74006290b25234d6878
-      size: 1102
+      md5: d6014cc89a00df72b8308a6454e2db84
+      size: 1111
     outs:
     - path: data\\processed\\test_wineQT.csv
-      md5: 0e9af019b6dd8b86b4fd1fea505a6888
-      size: 14805
+      md5: 20f0ecf4eadfab77a08e355d6b4c6f58
+      size: 13538
     - path: data\\processed\\train_wineQT.csv
-      md5: 727b5be0ccb3090ab1d49b02aea7a6e3
-      size: 58315
+      md5: b62cda1a9bc07e8017ef46e3f9c68a82
+      size: 53495
   train_and_evaluate:
     cmd: python src\\train_and_evaluate.py --config=params.yaml
     deps:
     - path: data\\processed\\test_wineQT.csv
-      md5: 0e9af019b6dd8b86b4fd1fea505a6888
-      size: 14805
+      md5: 20f0ecf4eadfab77a08e355d6b4c6f58
+      size: 13538
     - path: data\\processed\\train_wineQT.csv
-      md5: 727b5be0ccb3090ab1d49b02aea7a6e3
-      size: 58315
+      md5: b62cda1a9bc07e8017ef46e3f9c68a82
+      size: 53495
     - path: src\\train_and_evaluate.py
-      md5: 191a6a0c1ee2b97b8b34ba52ae30fa51
-      size: 2672
+      md5: df2a6834e11bc5b5dd954f925a3531cd
+      size: 2666
     params:
       params.yaml:
         estimators.ElasticNet.params.alpha: 0.94
@@ -53,8 +53,8 @@ stages:
       md5: 27e01d8092fdb4fbe85bb1c094406afa
       size: 46
     - path: report\\scores.json
-      md5: 43483dec58dbf074095ef7fdba983e88
+      md5: 68a3685078945760a0b806ae753bcddb
       size: 60
     - path: saved_models\\model.joblib
-      md5: 58a2b74a5052582a2b4c02892890bb00
-      size: 1215
+      md5: dedc1a46141e7737ea003091018c872d
+      size: 1198
