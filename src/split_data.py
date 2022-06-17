@@ -20,7 +20,7 @@ def split_and_save_data(config_path):
 
     df = pd.read_csv(raw_data_path, sep=",")
     train, test = train_test_split(
-        df, test_size=split_ratio, random_state=random_state)
+        df, test_size=split_ratio, random_state=random_state,stratify=df['quality']) # since the dataset is highly unbalanced
 
     train.to_csv(train_data_path, sep=",", index=False, encoding="utf-8")
     test.to_csv(test_data_path, sep=",", index=False, encoding="utf-8")

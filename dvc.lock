@@ -23,24 +23,24 @@ stages:
       md5: 6d2ea9b697406e9c36b97e265790b672
       size: 66886
     - path: src\\split_data.py
-      md5: d6014cc89a00df72b8308a6454e2db84
-      size: 1111
+      md5: 448ccacbaa0d686c1f9fbdda26646ec7
+      size: 1134
     outs:
     - path: data\\processed\\test_wineQT.csv
-      md5: 20f0ecf4eadfab77a08e355d6b4c6f58
-      size: 13538
+      md5: 4caa9dd8df98ebf4013ec5470d03638a
+      size: 13519
     - path: data\\processed\\train_wineQT.csv
-      md5: b62cda1a9bc07e8017ef46e3f9c68a82
-      size: 53495
+      md5: d88411a7808fc782b365f09f05b9c3a7
+      size: 53514
   train_and_evaluate:
     cmd: python src\\train_and_evaluate.py --config=params.yaml
     deps:
     - path: data\\processed\\test_wineQT.csv
-      md5: 20f0ecf4eadfab77a08e355d6b4c6f58
-      size: 13538
+      md5: 4caa9dd8df98ebf4013ec5470d03638a
+      size: 13519
     - path: data\\processed\\train_wineQT.csv
-      md5: b62cda1a9bc07e8017ef46e3f9c68a82
-      size: 53495
+      md5: d88411a7808fc782b365f09f05b9c3a7
+      size: 53514
     - path: src\\train_and_evaluate.py
       md5: 62de924fab2e628a24ef6e0c12f2180d
       size: 2830
@@ -53,8 +53,8 @@ stages:
       md5: 27e01d8092fdb4fbe85bb1c094406afa
       size: 46
     - path: report\\scores.json
-      md5: 68a3685078945760a0b806ae753bcddb
+      md5: c8b90e92ea31bf7bf3a8e8e94b6cb05d
       size: 60
     - path: saved_models\\model.joblib
-      md5: dedc1a46141e7737ea003091018c872d
+      md5: 982e3b6df24c928638aab1bd34cd2738
       size: 1198

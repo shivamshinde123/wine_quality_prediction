@@ -31,8 +31,16 @@ WineQuality
         </ul>
     </div>
 </nav>
-<div>
+<div><br>
+<br>
+<br>
     <!-- nav bar ends -->
+
+
+    <div class="container">
+        <strong>Data overview:</strong>
+        <p>This data is related to red variants of the Portuguese "Vinho Verde" wine.The data describes the amount of various chemicals present in wine and their effect on it's quality. The job of the machine learning model here is to predict the quality of the wine given the amount of different chemical in it.</p>
+    </div>
 
     <div class="container-fluid masthead">
         <br>
@@ -89,11 +97,11 @@ WineQuality
                             <label for="translation-result">
 
                                 <blockquote class="blockquote">
-                                    <p class="mb-2">Prediction:</p>
+                                    <p class="mb-2">Wine Quality (Score between o and 10):</p>
                                 </blockquote>
 
                             </label>
-                            <textarea readonly class="form-control" id="exTextarea" rows="5">The quality of wine is: {{ response }}</textarea>
+                            <textarea readonly class="form-control" id="exTextarea" rows="5">{{ response }}</textarea>
                         </div>
                     </form>
                 </div>
