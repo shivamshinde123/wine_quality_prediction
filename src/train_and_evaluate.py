@@ -41,6 +41,10 @@ def train_and_evaluate(config_path):
     lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=random_state)
 
     lr.fit(train_X, train_y)
+    print("*****************************************")
+    print(train_X.shape)
+    print(train_y.shape)
+    print("*****************************************")
 
     predicted_qualities = lr.predict(test_X)
 
