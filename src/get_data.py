@@ -9,12 +9,27 @@ import argparse
 
 
 def read_params(config_path):
+
+    """This function is used to load the parameters yaml file
+
+    Args:
+        config_path: Path to the parameters yaml file
+
+    Returns:
+        Loaded yaml file: Return the loaded parameters yaml file
+    """
     with open(config_path) as yaml_file:
         config = yaml.safe_load(yaml_file)
     return config
 
 
 def get_data(config_path):
+
+    """This function is used to load the data given by client
+
+    Returns:
+        Dataframe: Return the loaded dataframe of the data given by the client
+    """
     config = read_params(config_path)
     data_path = config['data_source']['s3_source']
     df = pd.read_csv(data_path)

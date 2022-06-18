@@ -7,6 +7,14 @@ import argparse
 
 
 def load_and_save(config_path):
+
+    """This function is used load the data from the location where client has put it and store it in local storage
+
+    Args:
+        config_path: Path to the parameters yaml file.
+
+    Returns: None
+    """
     config = read_params(config_path)
     df = get_data(config_path)
     new_columns = [column.replace(" ", "_") for column in df.columns]

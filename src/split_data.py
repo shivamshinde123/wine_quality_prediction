@@ -11,6 +11,14 @@ from get_data import read_params
 
 
 def split_and_save_data(config_path):
+
+    """This method is used to split the data into train and test data and to save it in processed folder
+
+    Args: 
+        config_path: Path to the parameters yaml file
+    
+    Returns: None
+    """
     config = read_params(config_path)
     test_data_path = config["split_data"]["test_path"]
     train_data_path = config["split_data"]["train_path"]

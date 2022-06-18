@@ -18,6 +18,16 @@ import json
 
 
 def train_and_evaluate(config_path):
+
+
+    """This method is used to train the machine learning model using the training data. Method also evaluates the metrics using the trained model and testing data 
+    and stores them into a json file
+
+    Args:
+        config_path: Path to the parameters yaml file
+
+    Returns: None
+    """
     config = read_params(config_path)
     test_data_path = config["split_data"]["test_path"]
     train_data_path = config["split_data"]["train_path"]
@@ -41,10 +51,6 @@ def train_and_evaluate(config_path):
     lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=random_state)
 
     lr.fit(train_X, train_y)
-    print("*****************************************")
-    print(train_X.shape)
-    print(train_y.shape)
-    print("*****************************************")
 
     predicted_qualities = lr.predict(test_X)
 
@@ -82,6 +88,20 @@ def train_and_evaluate(config_path):
 
 
 def eval_metrics(actual, pred):
+
+
+    """This method is used to evaluate the root mean square error, mean absolute error and r2 score of the trained model given the testing data and the predicted data
+
+
+    Args:
+        - actual: Test data 
+        - pred: Predictions on the test data
+
+    Returns:
+        - rmse: Root mean squared error 
+        - mae: Mean squared error 
+        - r2: r2 score
+    """
 
     rmse = np.round(np.sqrt(mean_squared_error(actual, pred)), 3)
     mae = np.round(mean_absolute_error(actual, pred), 3)
