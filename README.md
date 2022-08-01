@@ -1,103 +1,71 @@
+
+# Wine Quality Prediction
+
+The aim of the project is to predict the quality of the wine given the properties of the wine in question.
+
+
+## Screenshots
+
+#### Home page
+![Home Page](https://i.postimg.cc/G2VnZrf0/img1.png)
+
+#### Entering Feature Values
+![Entering Feature Values](https://i.postimg.cc/664XC27B/img2.png)
+
+#### Results Page
+![Results Page](https://i.postimg.cc/L6dMD9fL/img3.png)
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+    git clone https://github.com/shivamshinde123/wine_quality_prediction_mlops.git
+```
+
+Go to the project directory
+
+```bash
+    cd project-name
+```
+
 Create a conda environment
 
 ```bash
-conda create -n wine_quality python=3.10 -y
+    conda create -n environment_name python=3.10
 ```
 
-Activate created conda environment
+Activate the created conda environment
 
 ```bash
-conda activate wine_quality
+    conda activate environment_name
 ```
 
-Install the requirements
+Install dependencies
 
 ```bash
-pip install -r requirements.txt
+  pip install requirements.txt
 ```
 
-Download the data from the following link:  https://www.kaggle.com/datasets/yasserh/wine-quality-dataset
-
-Initializing git
+Start the server
 
 ```bash
-git init
+  python app.py
 ```
 
-Initializing dvc
 
-```bash
-dvc init
-```
+## 🚀 About Me
+I'm an aspiring data scientist and a data analyst.
 
-Adding the data to the dvc
 
-```bash
-dvc add data_given\WineQT.csv
-```
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherinempeterson.com/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shivamds92722/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://www.twitter.com/ShivamS64852411)
 
-Creating the first commit
 
-```bash
-git add .
-```
-```bash
-git commit -m "First commit"
-```
-Adding a remote origin for git
+## Documentation
 
-```bash
-git remote add origin github_link_here
-```
+[Documentation](https://linktodocumentation)
 
-Switching the branch to main
-
-```bash
-git branch -M main
-```
-
-Pushing the changes to the git
-
-```bash
-git push origin main
-```
-
-Use following command to run the stages in dvc.yaml file
-
-```bash
-dvc repro
-```
-
-After the training and evaluation step, change the values of alpha and l1_ratio and run the stages from dvc.yaml file. dvc will remember all the
-changes made and it will show those using following commands.
-
-Checking current metrics
-```bash 
-dvc metrics show
-```
-Checking the changes in metrics
-```bash
-dvc metrics diff
-```
-tox command
-```bash
-tox
-```
-for rebuilding
-```bash 
-tox -r
-```
-pytest command
-```bash
-pytest -v
-```
-
-build you own package
-```bash
-python setup.py sdist bdist_wheel
-```
-
-setup command (local package install)
-```bash
-pip install -e .
-``` 
